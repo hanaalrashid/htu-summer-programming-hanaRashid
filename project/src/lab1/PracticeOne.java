@@ -1,7 +1,7 @@
 package lab1;
 
 public class PracticeOne {
-
+// Comment is added
 	public static void main(String[] args) {
 		//1-  Write a code to test if a given number is positive or negative , it is a zero.
 		int x=0;
