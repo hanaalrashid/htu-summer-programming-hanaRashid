@@ -1,4 +1,4 @@
-package eventdriven;
+package programming3;
 
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
@@ -8,48 +8,42 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-public class Main6 {
+public class EventDriven2 {
 
 	public static void main(String[] args) {
-		// Window- Frame
 		JFrame frame=new JFrame("Welcome");
 		frame.setSize(400, 100);
 		
-		// Components 
-		
+		// Components
+		//JPanel pnl=new JPanel();
 		JLabel lbl=new JLabel("Name");
-		JTextField field=new JTextField(20);
+		JTextField txtName=new JTextField(20);
+		//pnl.add(lbl);
 		
-		JButton btn=new JButton("Say Hello");
-	
+		JButton btn=new JButton("say Hello");
 		btn.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-			String input=field.getText();
-			if(input.length()>=10) {
-				JOptionPane.showMessageDialog(null,"Number of charcters has exceeded the limit");
-				
-				
-			}
-			else {
-				JOptionPane.showMessageDialog(null,"You are welcome "+ input);
-			}
+				String name=txtName.getText();
+				JOptionPane.showMessageDialog(null, "Hello " +name);
 				
 			}
 		});
-		
-		frame.add(lbl);
-		frame.add(field);
-		frame.add(btn);
-	
+	    frame.add(lbl);
+	    frame.add(txtName);
+	    frame.add(btn);
+	    
+	    // center of the screen
+	    frame.setLocationRelativeTo(null);
+	    // layout
 		frame.setLayout(new FlowLayout());
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setLocationRelativeTo(null);
-		frame.setVisible(true);
 		
+		frame.setVisible(true);
 
 	}
 
